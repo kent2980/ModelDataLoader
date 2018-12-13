@@ -148,5 +148,15 @@ public abstract class ModelDataInputLoader {
 	 * @param trayStationList セットする trayStationList
 	 */
 	abstract protected void setTrayStationList();
+	/* (非 Javadoc)
+	 * @see java.lang.Object#toString()
+	 */
+	@Override
+	public String toString() {
+		return "ModelDataInputLoader [管理No=" + kanriNo + ", 機種名=" + modelName + ", マシン名称=" + machineName
+				+ ", 基板名称=" + substrateName + ", コメント=" + comment + ", 基板コード=" + substrateCode
+				+ ", 半田コード=" + solderCode + ", 半田マスクコード=" + solderMaskCode + ", リール部品="
+				+ reelStationList.size() + "点, トレイ部品=" + trayStationList.size() + "点]";
+	}
 
 }

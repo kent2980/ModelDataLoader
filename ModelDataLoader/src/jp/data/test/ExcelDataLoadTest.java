@@ -15,6 +15,7 @@ public class ExcelDataLoadTest {
 		String path = "D:\\sample\\段取りサポートリスト.xls";
 		try {
 			loader.setFilePath(path);
+			System.out.println(loader);
 			System.out.println("管理No：" + loader.getKanriNo());
 			System.out.println("機種名：" + loader.getModelName());
 			System.out.println("マシン名称：" + loader.getMachineName());
@@ -23,6 +24,7 @@ public class ExcelDataLoadTest {
 			System.out.println("基板コード：" + loader.getSubstrateCode());
 			System.out.println("はんだ：" + loader.getSolderCode());
 			System.out.println("はんだマスク：" + loader.getSolderMaskCode());
+			System.out.println("ステーション固定：" + loader.getTrayStationList().isCommonStation(loader.getReelStationList()));
 			System.out.println("リール部材：");
 			for(StationDataSet set : loader.getReelStationList()) {
 				System.out.println(set);

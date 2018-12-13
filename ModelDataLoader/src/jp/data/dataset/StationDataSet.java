@@ -39,5 +39,36 @@ public class StationDataSet {
 	public String toString() {
 		return "StationDataSet [ステーション=" + station + ", 部品コード=" + partsCode + "]";
 	}
-
+	/* (非 Javadoc)
+	 * @see java.lang.Object#hashCode()
+	 */
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((partsCode == null) ? 0 : partsCode.hashCode());
+		result = prime * result + station;
+		return result;
+	}
+	/* (非 Javadoc)
+	 * @see java.lang.Object#equals(java.lang.Object)
+	 */
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		StationDataSet other = (StationDataSet) obj;
+		if (partsCode == null) {
+			if (other.partsCode != null)
+				return false;
+		} else if (!partsCode.equals(other.partsCode))
+			return false;
+		if (station != other.station)
+			return false;
+		return true;
+	}
 }
